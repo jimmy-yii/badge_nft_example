@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { NFT_ADDRESS, abi } from "../abi";
+import { FREE_MINT_NFT_ADDRESS, PROOF_MINT_NFT_ADDRESS, abi } from "../abi";
 import { useWalletClient } from "wagmi";
 import { client } from "../kite";
 import { TransactionReceipt } from "viem";
@@ -9,7 +9,7 @@ export const useMint = () => {
   const [error, setError] = useState<Error | null>(null);
   const [result, setResult] = useState<TransactionReceipt | null>(null);
 
-  const mint = useCallback(async (to: `0x${string}`, proof: `0x${string}`[]) => {
+  const mint = useCallback(async (nftAddress: `0x${string}`, to: `0x${string}`, proof: `0x${string}`[]) => {
     if (!walletClient) {
       throw new Error("Wallet not connected");
     }
@@ -19,7 +19,7 @@ export const useMint = () => {
 
     try {
       const hash = await walletClient.writeContract({
-        address: NFT_ADDRESS as `0x${string}`,
+        address: nftAddress as `0x${string}`,
         abi,
         functionName: "mint",
         args: [to, proof],
