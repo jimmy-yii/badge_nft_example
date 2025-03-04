@@ -1,0 +1,34 @@
+{
+  "name": "badge_nft_example",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development rspack serve",
+    "build": "cross-env NODE_ENV=production rspack build"
+  },
+  "dependencies": {
+    "@reown/appkit": "^1.6.9",
+    "@reown/appkit-adapter-wagmi": "^1.6.9",
+    "@tailwindcss/postcss": "^4.0.9",
+    "@tanstack/react-query": "^5.66.11",
+    "node-polyfill-webpack-plugin": "^4.1.0",
+    "postcss": "^8.5.3",
+    "postcss-loader": "^8.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.0.9",
+    "viem": "^2.23.5",
+    "wagmi": "^2.14.12"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^1.2.6",
+    "@rspack/core": "^1.2.6",
+    "@rspack/plugin-react-refresh": "^1.0.1",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "cross-env": "^7.0.3",
+    "react-refresh": "^0.16.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3"
+  }
+}
